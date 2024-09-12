@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
@@ -47,7 +48,7 @@ h1.title {
 }
 
 h2.h2 {
-  color: #2ecc71;
+  color: #000000;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -58,22 +59,31 @@ h2.h2 {
   border-top: 1px solid #ddd;
 }
 
+/* Formulaire de recherche */
 #bookForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Aligne le formulaire à gauche */
+  width: 100%;
 }
 
 #bookForm input {
-  margin: 10px;
+  margin: 10px 0;
   padding: 8px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  width: 100%; /* Étendre la barre de recherche sur toute la page */
+  box-sizing: border-box;
 }
 
 #bookForm button {
   margin-top: 10px;
+}
+
+.search-button,
+.cancel-button {
+  align-self: flex-start; /* Aligner les boutons à gauche */
 }
 
 .search-results-grid {
@@ -86,28 +96,46 @@ h2.h2 {
 .book-item {
   background-color: #E0E0E0;
   border-radius: 8px;
-  padding: 10px;
-  width: 30%;
-  max-width: 300px;
+  padding: 40px;
+  width: 20%;
+  max-width: 320px; /* Augmenter la largeur maximale pour plus d'espace */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Aligner le contenu à gauche */
   text-align: left;
+  position: relative; /* Permet de positionner les icônes en absolu */
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px; /* Augmente l'espace en dessous du titre pour les icônes */
+  position: relative;
+  width: 100%; /* Assure que le titre utilise toute la largeur disponible */
+}
+
+.bookmark-icon, .delete-icon {
+  position: absolute;
+  top: -20px;
+  color: #469487 !important;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.bookmark-icon {
+  right: 0px; /* Espace entre l'icône marque-page et le bord droit */
+}
+
+.delete-icon {
+  right: 10px; /* Espace entre l'icône de suppression et le bord droit */
+}
+
+.fa-trash {
+  color: #469487 !important;
 }
 
 .book-image {
   max-width: 100%;
   height: auto;
-}
-
-.bookmark-icon, .delete-icon {
-  color: #469487 !important;
-  font-size: 24px;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.fa-trash {
-  color: #469487 !important;
 }/*# sourceMappingURL=styles.css.map */

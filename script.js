@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Créer un conteneur pour le bouton et le contenu
     let container = document.getElementById('container');
+    let myBooksTitle = document.querySelector('.h2');
     if (!container) {
         container = document.createElement('div');
         container.id = 'container';
-        body.appendChild(container);
+        myBooksTitle.insertAdjacentElement('afterend', container);
     }
 
     // Créer le bouton Ajouter un livre
@@ -153,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             newResults.innerHTML += '<p>Aucun livre n’a été trouvé.</p>';
         }
-        container.appendChild(newResults);
+        var parent = contentDiv.parentNode;
+        parent.insertBefore(newResults, contentDiv);
     }
 
     // Afficher les livres au chargement de la page
