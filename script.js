@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     addButton.className = 'button add-book-button';
     container.appendChild(addButton);
 
-    // Créer la section de contenu si elle n'existe pas encore
+    // Créer la section de contenu
     let contentDiv = document.getElementById('content');
     if (!contentDiv) {
         contentDiv = document.createElement('div');
         contentDiv.id = 'content';
+        contentDiv.innerHTML = '<h2>Ma poch\'liste</h2>';
         container.appendChild(contentDiv);
     }
 
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Icône de corbeille
                 const deleteIcon = document.createElement('button');
                 deleteIcon.innerHTML = '<i class="fas fa-trash"></i>';
-                deleteIcon.className = 'button delete-button';
+                deleteIcon.className = 'button delete-icon';
                 deleteIcon.addEventListener('click', () => {
                     const storedBooks = JSON.parse(sessionStorage.getItem('books')) || [];
                     const updatedBooks = storedBooks.filter(b => b.id !== book.id);
@@ -91,9 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
         newResults.id = 'searchResults';
         newResults.innerHTML = '<h2>Résultats de recherche</h2>';
         if (books.length > 0) {
-            const list = document.createElement('ul');
+            const list = document.createElement('div'); // Utiliser un div pour flexbox
+            list.className = 'search-results-grid';
             books.forEach(item => {
-                const listItem = document.createElement('li');
+                const listItem = document.createElement('div');
                 listItem.className = 'book-item';
 
                 // Titre
