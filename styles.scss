@@ -1,60 +1,93 @@
+// Variables pour centraliser les couleurs, tailles, et marges
+$primary-color: #469487;
+$secondary-color: #DF5A4B;
+$title-color: #3498db;
+$text-color: #333;
+$background-color: #E0E0E0;
+$font-size-base: 16px;
+$border-radius: 5px;
+
+// Mixin pour les boutons
+@mixin button-style($bg-color) {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: $font-size-base;
+  border-radius: $border-radius;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: $bg-color;
+  display: inline-block;
+}
+
+// Mixin pour les colonnes responsives
+@mixin responsive-columns($width) {
+  width: $width;
+  max-width: 320px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  position: relative;
+}
+
+// Mixin pour les icônes
+@mixin icon-style($position-right, $size) {
+  position: absolute;
+  top: 0px;
+  color: $primary-color !important;
+  font-size: $size;
+  cursor: pointer;
+  right: $position-right;
+}
+
+// Styles globaux
 body {
   font-family: "Roboto", sans-serif;
-  color: #333;
+  color: $text-color;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
-  padding: 20px;
 }
 
 .logo {
   display: block;
-  max-width: 350px;
+  max-width: 250px;
   width: 100%;
   height: auto;
   margin: 20px auto;
 }
 
-.button {
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  display: inline-block;
-}
-
+// Boutons
 .add-book-button {
-  background-color: #469487;
+  @include button-style($primary-color);
 }
 
 .search-button {
-  background-color: #469487;
+  @include button-style($primary-color);
 }
 
 .cancel-button {
-  background-color: #DF5A4B;
+  @include button-style($secondary-color);
 }
 
+// Titres
 h1.title {
-  color: #3498db;
-  text-align: center;
+  color: $title-color;
   margin: 20px 0;
   display: none;
 }
 
 h2.h2 {
-  color: #000000;
-  text-align: center;
+  color: black;
   margin-bottom: 30px;
 }
 
+// Contenu principal
 #content {
   padding: 20px;
-  text-align: center;
   border-top: 1px solid #ddd;
 }
 
@@ -62,27 +95,23 @@ h2.h2 {
 #bookForm {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligne le formulaire à gauche */
+  align-items: flex-start;
   width: 100%;
 }
 
 #bookForm input {
   margin: 10px 0;
   padding: 8px;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: $font-size-base;
+  border-radius: $border-radius;
   border: 1px solid #ccc;
-  width: 100%; /* Étendre la barre de recherche sur toute la page */
+  width: 100%;
   box-sizing: border-box;
-}
-
-#bookForm button {
-  margin-top: 10px;
 }
 
 .search-button,
 .cancel-button {
-  align-self: flex-start; /* Aligner les boutons à gauche */
+  align-self: flex-start;
 }
 
 .search-results-grid {
@@ -92,49 +121,52 @@ h2.h2 {
   gap: 10px;
 }
 
+// Colonnes responsives pour les livres
 .book-item {
-  background-color: #E0E0E0;
+  background-color: $background-color;
   border-radius: 8px;
   padding: 40px;
-  width: 20%;
-  max-width: 320px; /* Augmenter la largeur maximale pour plus d'espace */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligner le contenu à gauche */
-  text-align: left;
-  position: relative; /* Permet de positionner les icônes en absolu */
+  @include responsive-columns(30%);
 }
 
 .book-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 30px; /* Augmente l'espace en dessous du titre pour les icônes */
+  margin-bottom: 30px;
   position: relative;
-  width: 100%; /* Assure que le titre utilise toute la largeur disponible */
+  width: 100%;
 }
 
-.bookmark-icon, .delete-icon {
-  position: absolute;
-  top: -20px;
-  color: #469487 !important;
-  font-size: 24px;
-  cursor: pointer;
-}
-
+// Icônes de marque-page et de suppression
 .bookmark-icon {
-  right: 0px; /* Espace entre l'icône marque-page et le bord droit */
+  @include icon-style(0px, 24px);
 }
 
 .delete-icon {
-  right: 10px; /* Espace entre l'icône de suppression et le bord droit */
+  @include icon-style(10px, 24px);
 }
 
 .fa-trash {
-  color: #469487 !important;
+  color: $primary-color !important;
 }
 
 .book-image {
   max-width: 100%;
   height: auto;
+}
+
+// Grille de la poch'liste
+.poch-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+// Media query pour iPhone 14 Pro Max (390px x 844px)
+@media (max-width: 430px) {
+  .book-item {
+    @include responsive-columns(45%);
+  }
 }

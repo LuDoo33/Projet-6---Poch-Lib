@@ -1,23 +1,21 @@
-@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
-  padding: 20px;
 }
 
 .logo {
   display: block;
-  max-width: 350px;
+  max-width: 250px;
   width: 100%;
   height: auto;
   margin: 20px auto;
 }
 
-.button {
+.add-book-button {
   color: white;
   border: none;
   padding: 10px 20px;
@@ -25,37 +23,47 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  background-color: #469487;
   display: inline-block;
 }
 
-.add-book-button {
-  background-color: #469487;
-}
-
 .search-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
   background-color: #469487;
+  display: inline-block;
 }
 
 .cancel-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
   background-color: #DF5A4B;
+  display: inline-block;
 }
 
 h1.title {
   color: #3498db;
-  text-align: center;
   margin: 20px 0;
   display: none;
 }
 
 h2.h2 {
-  color: #000000;
-  text-align: center;
+  color: black;
   margin-bottom: 30px;
 }
 
 #content {
   padding: 20px;
-  text-align: center;
   border-top: 1px solid #ddd;
 }
 
@@ -63,7 +71,7 @@ h2.h2 {
 #bookForm {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligne le formulaire à gauche */
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -73,17 +81,13 @@ h2.h2 {
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 100%; /* Étendre la barre de recherche sur toute la page */
+  width: 100%;
   box-sizing: border-box;
-}
-
-#bookForm button {
-  margin-top: 10px;
 }
 
 .search-button,
 .cancel-button {
-  align-self: flex-start; /* Aligner les boutons à gauche */
+  align-self: flex-start;
 }
 
 .search-results-grid {
@@ -97,38 +101,40 @@ h2.h2 {
   background-color: #E0E0E0;
   border-radius: 8px;
   padding: 40px;
-  width: 20%;
-  max-width: 320px; /* Augmenter la largeur maximale pour plus d'espace */
+  width: 30%;
+  max-width: 320px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligner le contenu à gauche */
+  align-items: start;
   text-align: left;
-  position: relative; /* Permet de positionner les icônes en absolu */
+  position: relative;
 }
 
 .book-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 30px; /* Augmente l'espace en dessous du titre pour les icônes */
+  margin-bottom: 30px;
   position: relative;
-  width: 100%; /* Assure que le titre utilise toute la largeur disponible */
-}
-
-.bookmark-icon, .delete-icon {
-  position: absolute;
-  top: -20px;
-  color: #469487 !important;
-  font-size: 24px;
-  cursor: pointer;
+  width: 100%;
 }
 
 .bookmark-icon {
-  right: 0px; /* Espace entre l'icône marque-page et le bord droit */
+  position: absolute;
+  top: 0px;
+  color: #469487 !important;
+  font-size: 24px;
+  cursor: pointer;
+  right: 0px;
 }
 
 .delete-icon {
-  right: 10px; /* Espace entre l'icône de suppression et le bord droit */
+  position: absolute;
+  top: 0px;
+  color: #469487 !important;
+  font-size: 24px;
+  cursor: pointer;
+  right: 10px;
 }
 
 .fa-trash {
@@ -138,4 +144,25 @@ h2.h2 {
 .book-image {
   max-width: 100%;
   height: auto;
+}
+
+.poch-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+@media (max-width: 430px) {
+  .book-item {
+    width: 45%;
+    max-width: 320px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    position: relative;
+  }
 }/*# sourceMappingURL=styles.css.map */
