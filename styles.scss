@@ -6,6 +6,7 @@ $text-color: #333;
 $background-color: #E0E0E0;
 $font-size-base: 16px;
 $border-radius: 5px;
+$font-size-responsive: 14px; // Taille de police réduite pour responsive
 
 // Mixin pour les boutons
 @mixin button-style($bg-color) {
@@ -91,7 +92,7 @@ h2.h2 {
   border-top: 1px solid #ddd;
 }
 
-/* Formulaire de recherche */
+// Formulaire de recherche
 #bookForm {
   display: flex;
   flex-direction: column;
@@ -109,32 +110,42 @@ h2.h2 {
   box-sizing: border-box;
 }
 
-.search-button,
-.cancel-button {
+.search-button {
   align-self: flex-start;
+  margin-top: 10px;
 }
 
+.cancel-button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+// Résultats de recherche
 .search-results-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px; // Augmente l'espace entre les livres
 }
 
 // Colonnes responsives pour les livres
 .book-item {
   background-color: $background-color;
   border-radius: 8px;
-  padding: 40px;
-  @include responsive-columns(30%);
+  padding: 20px;
+  @include responsive-columns(30%); // 3 livres côte à côte en mode normal
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Ajoute une ombre légère pour la délimitation
 }
 
-.book-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
+// Taille de l'image des livres
+.book-image {
+  width: 128px;
+  height: 193px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 // Icônes de marque-page et de suppression
@@ -143,16 +154,7 @@ h2.h2 {
 }
 
 .delete-icon {
-  @include icon-style(10px, 24px);
-}
-
-.fa-trash {
-  color: $primary-color !important;
-}
-
-.book-image {
-  max-width: 100%;
-  height: auto;
+  @include icon-style(0px, 24px);
 }
 
 // Grille de la poch'liste
@@ -164,9 +166,36 @@ h2.h2 {
   width: 100%;
 }
 
-// Media query pour iPhone 14 Pro Max (390px x 844px)
+// Liste des livres
+ul {
+  display: flex;
+  flex-wrap: wrap; // Permet de gérer les lignes si les éléments ne rentrent pas sur une seule ligne
+  list-style-type: none; // Enlève les puces de liste
+  padding-inline-start: 0;
+  gap: 10px; // Ajoute un espace entre les éléments
+}
+
+li {
+  flex: 0 1 30%; // Ajuste la largeur des éléments en mode normal
+  margin-bottom: 10px; // Espacement entre les lignes si nécessaire
+}
+
+// Media query pour les tablettes
+@media (max-width: 768px) { // Largeur maximale pour les tablettes
+  .book-item {
+    @include responsive-columns(45%); // Deux livres côte à côte sur tablettes
+  }
+}
+
+// Media query pour iPhone 14 Pro Max (430px x 932px)
 @media (max-width: 430px) {
   .book-item {
-    @include responsive-columns(45%);
+    @include responsive-columns(100%); // Un livre à la fois sur iPhone 14 Pro Max
+  }
+  body {
+    font-size: $font-size-responsive; // Taille du texte plus petite en responsive
+  }
+  h2.h2 {
+    font-size: 1.2rem; // Ajuste la taille du titre
   }
 }

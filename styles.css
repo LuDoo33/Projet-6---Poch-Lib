@@ -67,7 +67,6 @@ h2.h2 {
   border-top: 1px solid #ddd;
 }
 
-/* Formulaire de recherche */
 #bookForm {
   display: flex;
   flex-direction: column;
@@ -85,22 +84,27 @@ h2.h2 {
   box-sizing: border-box;
 }
 
-.search-button,
+.search-button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
 .cancel-button {
   align-self: flex-start;
+  margin-top: 10px;
 }
 
 .search-results-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .book-item {
   background-color: #E0E0E0;
   border-radius: 8px;
-  padding: 40px;
+  padding: 20px;
   width: 30%;
   max-width: 320px;
   box-sizing: border-box;
@@ -109,14 +113,18 @@ h2.h2 {
   align-items: start;
   text-align: left;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.book-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
+.book-image {
+  width: 128px;
+  height: 193px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .bookmark-icon {
@@ -134,16 +142,7 @@ h2.h2 {
   color: #469487 !important;
   font-size: 24px;
   cursor: pointer;
-  right: 10px;
-}
-
-.fa-trash {
-  color: #469487 !important;
-}
-
-.book-image {
-  max-width: 100%;
-  height: auto;
+  right: 0px;
 }
 
 .poch-list-grid {
@@ -154,7 +153,20 @@ h2.h2 {
   width: 100%;
 }
 
-@media (max-width: 430px) {
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-inline-start: 0;
+  gap: 10px;
+}
+
+li {
+  flex: 0 1 30%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
   .book-item {
     width: 45%;
     max-width: 320px;
@@ -164,5 +176,23 @@ h2.h2 {
     align-items: start;
     text-align: left;
     position: relative;
+  }
+}
+@media (max-width: 430px) {
+  .book-item {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    position: relative;
+  }
+  body {
+    font-size: 14px;
+  }
+  h2.h2 {
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
