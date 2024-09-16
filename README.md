@@ -3,7 +3,7 @@
 Poch'Lib is a web application that allows you to search for books using the Google Books API and manage a reading list. You can add books to a personal list, view added books, and perform searches by title and author.
 
 ## Installation
-ollow these steps to install and run the project on your local machine.
+Follow these steps to install and run the project on your local machine.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ Clone the repository using the following command:
 
 Copier le code
 git clone https://github.com/LuDoo33/Projet-6---Poch-Lib.git
-Navigate to the project directory:
+Navigate to the project directory
 
 ## Dependencies
 
@@ -30,7 +30,6 @@ The project uses standard web technologies: HTML, CSS (SCSS), and JavaScript. No
 ## Usage
 
 Open the index.html file in your web browser. You can use a local server for a better experience (e.g., the Live Server extension in VSCode).
-
 
 ## Explore application
 
