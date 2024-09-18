@@ -15,8 +15,7 @@ Clone the repository using the following command:
 
 ## Bash
 
-Copier le code
-git clone https://github.com/LuDoo33/Projet-6---Poch-Lib.git
+Clone https://github.com/LuDoo33/Projet-6---Poch-Lib.git
 Navigate to the project directory
 
 ## Dependencies
