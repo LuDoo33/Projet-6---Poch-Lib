@@ -1,50 +1,47 @@
 ## Poch Lib
 
-Poch'Lib is a web application that allows you to search for books using the Google Books API and manage a reading list. You can add books to a personal list, view added books, and perform searches by title and author.
+Poch'Lib est une application web qui permet de rechercher des livres en utilisant l'API Google Books et de gérer une liste de lecture personnelle. Vous pouvez ajouter des livres à une liste personnelle, voir les livres ajoutés et effectuer des recherches par titre et auteur.
 
 ## Installation
-Follow these steps to install and run the project on your local machine.
+Suivez ces étapes pour installer et exécuter le projet sur votre machine locale.
 
-## Prerequisites
+## Prerequis
 
-Web Browser (such as Chrome, Firefox, Edge, etc.)
-Text Editor (such as VSCode, Sublime Text, etc.) for modifying files
-Local Server for testing the application (e.g., Live Server for VSCode)
-Cloning the Repository
-Clone the repository using the following command:
+Navigateur Web (comme Chrome, Firefox, Edge, etc.)
+Éditeur de texte (comme VSCode, Sublime Text, etc.) pour modifier les fichiers
+Serveur local pour tester l'application (par exemple, Live Server pour VSCode)
 
-## Bash
+## Dépôt
+Clonez le dépôt en utilisant la commande suivante :
+" clone https://github.com/LuDoo33/Projet-6---Poch-Lib.git " 
+Naviguez vers le répertoire du projet.
 
-Clone https://github.com/LuDoo33/Projet-6---Poch-Lib.git
-Navigate to the project directory
+## Dépendances
 
-## Dependencies
+Le projet utilise des technologies web standard : HTML, CSS (SCSS) et JavaScript. Aucune dépendance externe n'est requise pour exécuter le projet localement. Assurez-vous d'avoir un éditeur de texte moderne et un navigateur pour tester l'application.
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+## Utilisation
 
-## Delete a file
+Ouvrez le fichier index.html dans votre navigateur web. Vous pouvez utiliser un serveur local pour une meilleure expérience (par exemple, l'extension Live Server dans VSCode).
 
-The project uses standard web technologies: HTML, CSS (SCSS), and JavaScript. No external dependencies are required to run the project locally. Ensure you have a modern text editor and browser for testing the application.
+## Explorer l'application
 
-## Usage
+ 1. Cliquez sur le bouton "Ajouter un livre" pour ouvrir le formulaire de recherche.
+ 2. Utilisez le formulaire pour rechercher des livres par titre ou auteur.
+ 3. Ajoutez des livres à votre liste en cliquant sur l'icône de marque-page.
+ 4. Consultez votre liste de livres dans la section "Ma poch'liste".
+ 5. Supprimez des livres de votre liste en cliquant sur l'icône de corbeille.
 
-Open the index.html file in your web browser. You can use a local server for a better experience (e.g., the Live Server extension in VSCode).
+## Structure des fichiers
 
-## Explore application
+ 1. index.html : Fichier HTML principal de l'application.
+ 2. styles.scss : Fichier SCSS pour le style de l'application.
+ 3. script.js : Fichier JavaScript pour la logique de l'application.
+ 4. images/ : Répertoire contenant les images
 
- 1. Click the "Add a Book" button to open the search form.
- 2. Use the form to search for books by title or author.
- 3. Add books to your list by clicking the bookmark icon.
- 4. View your book list in the "My Reading List" section.
- 5. Remove books from your list by clicking the trash icon.
- 6. File Structure
- 7. index.html: Main HTML file for the application.
- 8. styles.scss: SCSS file for styling the application.
- 9. script.js: JavaScript file for the application logic.
- 10. images/: Directory containing images
 
-## Fork the repository
+## Forker le dépôt
 
-Create a branch for your feature or fix.
-Make your changes.
-Submit a pull request with a description of your changes.
+1. Créez une branche pour votre fonctionnalité ou correction.
+2. Apportez vos modifications.
+3. Soumettez une demande de tirage avec une description de vos modifications.
