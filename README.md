@@ -44,4 +44,8 @@ Ouvrez le fichier index.html dans votre navigateur web. Vous pouvez utiliser un 
 
 1. Créez une branche pour votre fonctionnalité ou correction.
 2. Apportez vos modifications.
+<<<<<<< HEAD
 3. Soumettez une demande de tirage avec une description de vos modifications.
+=======
+3. Soumettez une demande de tirage avec une description de vos modifications.
+>>>>>>> 5706e0d0d42f20403a3e4aa4519326a5125e62ec
