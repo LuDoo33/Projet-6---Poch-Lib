@@ -15,18 +15,7 @@ body {
   margin: 20px auto;
 }
 
-.add-book-button {
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  background-color: #469487;
-  display: inline-block;
-}
-
+.add-book-button,
 .search-button {
   color: white;
   border: none;
@@ -84,11 +73,7 @@ h2.h2 {
   box-sizing: border-box;
 }
 
-.search-button {
-  align-self: flex-start;
-  margin-top: 10px;
-}
-
+.search-button,
 .cancel-button {
   align-self: flex-start;
   margin-top: 10px;
@@ -110,32 +95,20 @@ h2.h2 {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   text-align: left;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .book-image {
   width: 128px;
   height: 193px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
-.bookmark-icon {
-  position: absolute;
-  top: 0px;
-  color: #469487 !important;
-  font-size: 24px;
-  cursor: pointer;
-  right: 0px;
-}
-
+.bookmark-icon,
 .delete-icon {
   position: absolute;
   top: 0px;
@@ -166,6 +139,7 @@ li {
   margin-bottom: 10px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
   .book-item {
     width: 45%;
@@ -173,11 +147,12 @@ li {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     text-align: left;
     position: relative;
   }
 }
+
 @media (max-width: 430px) {
   .book-item {
     width: 100%;
@@ -185,14 +160,16 @@ li {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     text-align: left;
     position: relative;
   }
+
   body {
     font-size: 14px;
   }
+
   h2.h2 {
     font-size: 1.2rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+}

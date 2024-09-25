@@ -110,11 +110,7 @@ h2.h2 {
   box-sizing: border-box;
 }
 
-.search-button {
-  align-self: flex-start;
-  margin-top: 10px;
-}
-
+.search-button,
 .cancel-button {
   align-self: flex-start;
   margin-top: 10px;
@@ -137,7 +133,7 @@ h2.h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Ajoute une ombre légère pour la délimitation
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Ajoute une ombre légère pour la délimitation
 }
 
 // Taille de l'image des livres
@@ -149,10 +145,7 @@ h2.h2 {
 }
 
 // Icônes de marque-page et de suppression
-.bookmark-icon {
-  @include icon-style(0px, 24px);
-}
-
+.bookmark-icon,
 .delete-icon {
   @include icon-style(0px, 24px);
 }
@@ -192,9 +185,11 @@ li {
   .book-item {
     @include responsive-columns(100%); // Un livre à la fois sur iPhone 14 Pro Max
   }
+
   body {
     font-size: $font-size-responsive; // Taille du texte plus petite en responsive
   }
+
   h2.h2 {
     font-size: 1.2rem; // Ajuste la taille du titre
   }
